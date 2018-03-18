@@ -10,7 +10,6 @@
 #include "ext/buffers.h"
 #include "ext/portable_time.h"
 #include <libcaer/devices/dynapse.h>
-#include "ext/colorjet/colorjet.h"
 #include "modules/ini/dynapse_utils.h"
 
 struct RSFilter_state {

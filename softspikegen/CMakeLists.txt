@@ -1,11 +1,5 @@
-IF (NOT SOFTSPIKEGEN)
-	SET(SOFTSPIKEGEN 0 CACHE BOOL "Enable software spike generator module")
-ENDIF()
+ADD_LIBRARY(softspikegen SHARED softspikegen.c)
 
-IF (SOFTSPIKEGEN)
-    ADD_LIBRARY(softspikegen SHARED softspikegen.c)
+TARGET_LINK_LIBRARIES(softspikegen ${CAER_LIBS})
 
-    TARGET_LINK_LIBRARIES(softspikegen ${CAER_C_LIBS})
-
-	INSTALL(TARGETS softspikegen DESTINATION ${CM_SHARE_DIR})
-ENDIF()
+INSTALL(TARGETS softspikegen DESTINATION ${CAER_MODULES_DIR})

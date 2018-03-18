@@ -1,13 +1,5 @@
-IF (NOT FPGASPIKEGEN)
-	SET(FPGASPIKEGEN 0 CACHE BOOL "Enable fpga spike generator module")
-ENDIF()
+ADD_LIBRARY(fpgaspikegen SHARED fpgaspikegen.c)
 
-IF (FPGASPIKEGEN)
-    ADD_LIBRARY(fpgaspikegen SHARED fpgaspikegen.c)
+TARGET_LINK_LIBRARIES(fpgaspikegen ${CAER_LIBS})
 
-    TARGET_LINK_LIBRARIES(fpgaspikegen ${CAER_C_LIBS})
-
-	INSTALL(TARGETS fpgaspikegen DESTINATION ${CM_SHARE_DIR})
-ENDIF()
-
-
+INSTALL(TARGETS fpgaspikegen DESTINATION ${CAER_MODULES_DIR})

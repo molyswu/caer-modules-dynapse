@@ -46,3 +46,10 @@ SET(CMAKE_INSTALL_RPATH ${CAER_MODULES_DIR})
 
 # Compile modules
 ADD_SUBDIRECTORY(dynapse)
+ADD_SUBDIRECTORY(fpgaspikegen)
+ADD_SUBDIRECTORY(meanratefilter)
+ADD_SUBDIRECTORY(netparser)
+ADD_SUBDIRECTORY(poissonspikegen)
+ADD_SUBDIRECTORY(reservoir)
+ADD_SUBDIRECTORY(softspikegen)
+ADD_SUBDIRECTORY(synapsereconfig)

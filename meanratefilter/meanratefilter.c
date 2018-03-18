@@ -8,7 +8,7 @@
 #include "base/module.h"
 #include "ext/buffers.h"
 #include "ext/portable_time.h"
-#include "ext/colorjet/colorjet.h"
+#include "colorjet.h"
 #include <time.h>
 #include <libcaer/devices/dynapse.h>
 #include <libcaer/events/spike.h>
