@@ -1,0 +1,48 @@
+# Init CMake (require at least version 2.6)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+
+# General build settings
+IF (NOT CMAKE_BUILD_TYPE)
+	SET(CMAKE_BUILD_TYPE "Release" CACHE STRING "Possible build types: None Debug Release RelWithDebInfo MinSizeRel")
+ENDIF()
+
+# Project name and version
+PROJECT(cAER-modules-dynapse C CXX)
+SET(PROJECT_VERSION_MAJOR 1)
+SET(PROJECT_VERSION_MINOR 2)
+SET(PROJECT_VERSION_PATCH 1)
+SET(PROJECT_VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH})
+
+# Define installation paths
+INCLUDE(GNUInstallDirs)
+
+# Custom CMake base module
+SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATAROOTDIR}/caer)
+
+# Basic setup for cAER
+INCLUDE(caer-base)
+CAER_SETUP(FALSE)
+
+# Search for external libraries with pkg-config.
+INCLUDE(FindPkgConfig)
+
+# Basic cAER-SDK, includes libcaer always.
+PKG_CHECK_MODULES(LIBCAERSDK REQUIRED libcaersdk>=1.2.1)
+
+SET(CAER_INCDIRS ${LIBCAERSDK_INCLUDE_DIRS})
+SET(CAER_LIBDIRS ${LIBCAERSDK_LIBRARY_DIRS})
+SET(CAER_LIBS ${CAER_BASE_LIBS} ${LIBCAERSDK_LIBRARIES})
+
+# Add local directory to include and library paths
+SET(CAER_INCDIRS ${CAER_INCDIRS} ${CMAKE_SOURCE_DIR}/)
+SET(CAER_LIBDIRS ${CAER_LIBDIRS} ${CMAKE_SOURCE_DIR}/)
+
+# Set include/library paths for successive compilation.
+INCLUDE_DIRECTORIES(${CAER_INCDIRS})
+LINK_DIRECTORIES(${CAER_LIBDIRS})
+
+# Set full RPATH, modules are libraries for cAER
+SET(CMAKE_INSTALL_RPATH ${CAER_MODULES_DIR})
+
+# Compile modules
+ADD_SUBDIRECTORY(dynapse)
