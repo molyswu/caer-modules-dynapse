@@ -1,10 +1,9 @@
-#include "base/mainloop.h"
-#include "base/module.h"
+#include <caer-sdk/mainloop.h>
 #include <libcaer/devices/dynapse.h>
 #include <libcaer/events/spike.h>
-#include "modules/ini/dynapse_utils.h"
-#include "ext/portable_time.h"
-#include "ext/c11threads_posix.h"
+#include "../dynapse/dynapse_utils.h"
+#include <caer-sdk/cross/portable_time.h>
+#include <caer-sdk/cross/c11threads_posix.h>
 #include <math.h>
 
 #define STIM_POISSON 	1

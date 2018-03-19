@@ -5,8 +5,7 @@
  *      Author: Carsten
  */
 
-#include "base/mainloop.h"
-#include "base/module.h"
+#include <caer-sdk/mainloop.h>
 #include <libcaer/events/spike.h>
 #include <libcaer/devices/dynapse.h>
 

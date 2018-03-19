@@ -4,13 +4,11 @@
  *      Author: federico.corradi@inilabs.com
  */
 
-#include <time.h>
-#include "base/mainloop.h"
-#include "base/module.h"
-#include "ext/buffers.h"
-#include "ext/portable_time.h"
+#include <caer-sdk/mainloop.h>
+#include <caer-sdk/buffers.h>
+#include <caer-sdk/cross/portable_time.h>
 #include <libcaer/devices/dynapse.h>
-#include "modules/ini/dynapse_utils.h"
+#include "../dynapse/dynapse_utils.h"
 
 struct RSFilter_state {
 	caerDeviceHandle eventSourceModuleState;

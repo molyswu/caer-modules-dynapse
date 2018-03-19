@@ -4,16 +4,15 @@
  *      Author: federico.corradi@inilabs.com
  */
 
-#include "base/mainloop.h"
-#include "base/module.h"
-#include "ext/buffers.h"
-#include "ext/portable_time.h"
+#include <caer-sdk/mainloop.h>
+#include <caer-sdk/buffers.h>
+#include <caer-sdk/cross/portable_time.h>
 #include "colorjet.h"
 #include <time.h>
 #include <libcaer/devices/dynapse.h>
 #include <libcaer/events/spike.h>
 #include <libcaer/events/frame.h> //display
-#include "modules/ini/dynapse_utils.h"
+#include "../dynapse/dynapse_utils.h"
 
 struct MRFilter_state {
 	sshsNode dynapseConfigNode;
