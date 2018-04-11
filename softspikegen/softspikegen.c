@@ -3,6 +3,7 @@
 #include <libcaer/events/spike.h>
 #include "../dynapse/dynapse_utils.h"
 #include <caer-sdk/cross/portable_time.h>
+#include <caer-sdk/cross/portable_threads.h>
 #include <caer-sdk/cross/c11threads_posix.h>
 #include <math.h>
 
@@ -331,7 +332,7 @@ int spikeGenThread(void *spikeGenState) {
 
 	GenSpikeState state = spikeGenState;
 
-	thrd_set_name("SpikeGenThread");
+	portable_thread_set_name("SpikeGenThread");
 
 	while (atomic_load_explicit(&state->running, memory_order_relaxed)) {
 		if (!atomic_load(&state->doStim) && !atomic_load(&state->setCam) && !atomic_load(&state->setCamSingle) &&
