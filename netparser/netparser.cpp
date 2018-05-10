@@ -74,7 +74,8 @@ static bool caerNetParserInit(caerModuleData moduleData) {
 	//sshsNodePutBoolIfAbsent(moduleData->moduleNode, "setSram", false);
 	//sshsNodePutBoolIfAbsent(moduleData->moduleNode, "setCam", false);
 
-	int16_t *inputs = caerMainloopGetModuleInputIDs(moduleData->moduleID, NULL);
+	int16_t *inputs;
+	caerMainloopModuleGetInputDeps(moduleData->moduleID, &inputs);
 	if (inputs == NULL) {
 		return (false);
 	}
