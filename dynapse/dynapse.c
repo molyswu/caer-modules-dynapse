@@ -345,8 +345,7 @@ static void caerInputDYNAPSERun(caerModuleData moduleData, caerEventPacketContai
 
 		if ((special != NULL) && (caerEventPacketHeaderGetEventNumber(special) == 1)
 			&& (caerSpecialEventPacketFindEventByType((caerSpecialEventPacket) special, TIMESTAMP_RESET) != NULL)) {
-			caerMainloopResetProcessors(moduleData->moduleID);
-			caerMainloopResetOutputs(moduleData->moduleID);
+			caerMainloopModuleResetOutputRevDeps(moduleData->moduleID);
 		}
 	}
 }
