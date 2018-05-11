@@ -271,7 +271,6 @@ void caerClearConnections(caerModuleData moduleData) {
 }*/
 
 static void caerNetParserModuleConfig(caerModuleData moduleData) {
-	caerModuleConfigUpdateReset(moduleData);
 	NetParserState state = (NETPARSER_state*) moduleData->moduleState;
 
 	bool newProgramTXT = sshsNodeGetBool(moduleData->moduleNode, "ProgramNetworkFrom.txt");

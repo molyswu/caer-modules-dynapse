@@ -326,8 +326,6 @@ static void generateOutputFrame(caerEventPacketContainer *out, MRFilterState sta
 }
 
 static void caerMeanRateFilterConfig(caerModuleData moduleData) {
-	caerModuleConfigUpdateReset(moduleData);
-
 	MRFilterState state = moduleData->moduleState;
 
 	state->colorscaleMax = sshsNodeGetInt(moduleData->moduleNode, "colorscaleMax");

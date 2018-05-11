@@ -165,9 +165,6 @@ static void caerSynapseReconfigModuleRun(caerModuleData moduleData, caerEventPac
 // update parameters
 
 static void caerSynapseReconfigModuleConfig(caerModuleData moduleData) {
-
-	caerModuleConfigUpdateReset(moduleData);
-
 	SynapseReconfigState state = moduleData->moduleState;
 
 	// We don't know what changed when this function is called so we will check and only update

@@ -127,8 +127,6 @@ static void caerFpgaSpikeGenModuleRun(caerModuleData moduleData, caerEventPacket
 }
 
 static void caerFpgaSpikeGenModuleConfig(caerModuleData moduleData) {
-	caerModuleConfigUpdateReset(moduleData);
-
 	HWFilterState state = moduleData->moduleState;
 
 	// this will update parameters, from user input

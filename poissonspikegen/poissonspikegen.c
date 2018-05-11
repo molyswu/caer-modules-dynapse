@@ -129,8 +129,6 @@ static void caerPoissonSpikeGenModuleRun(caerModuleData moduleData, caerEventPac
 }
 
 static void caerPoissonSpikeGenModuleConfig(caerModuleData moduleData) {
-	caerModuleConfigUpdateReset(moduleData);
-
 	HWFilterState state = moduleData->moduleState;
 
 	// this will update parameters, from user input

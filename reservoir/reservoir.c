@@ -198,8 +198,6 @@ static void caerReservoirRun(caerModuleData moduleData, caerEventPacketContainer
 }
 
 static void caerReservoirConfig(caerModuleData moduleData) {
-	caerModuleConfigUpdateReset(moduleData);
-
 	RSFilterState state = moduleData->moduleState;
 
 	// this will update parameters, from user input
