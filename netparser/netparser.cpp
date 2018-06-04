@@ -1,9 +1,7 @@
 //netparser.c
 
-#include "main.h"
-#include "base/mainloop.h"
-#include "base/module.h"
-#include "modules/ini/dynapse_utils.h"  // useful constants
+#include <caer-sdk/mainloop.h>
+#include "dynapse/dynapse_utils.h"  // useful constants
 #include "Neuron.h"
 #include <libcaer/devices/dynapse.h>
 

@@ -22,8 +22,8 @@
 #include <fstream>
 #include <mxml.h>
 #include <libcaer/devices/dynapse.h>
-#include "modules/ini/dynapse_utils.h"
-#include "base/mainloop.h"
+#include <caer-sdk/mainloop.h>
+#include "dynapse/dynapse_utils.h"
 
 using namespace std;
 
